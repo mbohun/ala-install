@@ -1,7 +1,7 @@
 # An inventory for the deployment of the ALA demo for the UK.
 
 [ala-demo]
-biocache-test
+203.101.226.44
 
 [ala-demo:vars]
 is_vagrant=false
