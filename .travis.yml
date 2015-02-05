@@ -9,6 +9,7 @@ branches:
 
 before_install:
   - openssl aes-256-cbc -K $encrypted_bc4ab20c2dda_key -iv $encrypted_bc4ab20c2dda_iv -in key.pem.enc -out key.pem -d
+  - chmod 600 key.pem
 
 install:
   - pip install ansible
