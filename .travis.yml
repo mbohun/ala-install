@@ -15,7 +15,7 @@ install:
   - pip install ansible
 
 before_script:
-  - sudo sh -c "echo \"203.101.226.44  test-test\" >> /etc/hosts"
+  - sudo sh -c "echo \"203.101.226.44  biocache-test\" >> /etc/hosts"
 
 script:
   - cd ansible
