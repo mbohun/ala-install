@@ -1,0 +1,26 @@
+language: python
+
+python:
+  - "2.7"
+
+branches:
+  only:
+  - master
+
+install:
+  - pip install ansible
+
+before_script:
+  - sudo sh -c "echo \"203.101.226.44  test-test\" >> /etc/hosts"
+
+script:
+  - cd ansible
+  - ansible-playbook -i inventories/biocache-test ala-demo.yml --private-key ../key.pem -u $ANSIBLE_TEST_USER -s
+
+addons:
+  ssh_known_hosts:
+  - biocache-test
+
+env:
+  global:
+  - secure: "qHZ4n4DAqe+3UkfuQBPMDqthgHjHZf53kWNZU1tO5csmScsoYnoOg3Qq3Y60tBjQ+ENEI04b3flNRo+rGA6swSV4rXv0LhRgCkPyxXhzUmTjgcAc4uF+5dlKfbwUXqy55pIi0nqphlJhnHoHRLDMvxkatuzxoUJk0pLeYcq/Daw="
