@@ -1,4 +1,4 @@
-# ALA Installation Scripts
+# ALA Installation Scripts [![Build Status](https://travis-ci.org/mbohun/ala-install.svg?branch=master)](https://travis-ci.org/mbohun/ala-install)
 This project contains [Ansible](http://www.ansible.com/) playbooks for setting up ALA components on CentOS 6.x and Ubuntu 12.x machines.
 This project includes a playbook for setting up the [ALA demo ](http://ala-demo.gbif.org).
 
