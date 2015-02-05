@@ -23,6 +23,7 @@ script:
 
 addons:
   ssh_known_hosts:
+  - 203.101.226.44
   - biocache-test
 
 env:
