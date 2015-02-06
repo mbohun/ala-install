@@ -15,7 +15,7 @@ install:
   - pip install ansible
 
 script:
-  - cd ansible && ansible-playbook -i inventories/biocache-test ala-demo.yml --private-key ../key.pem -u $ANSIBLE_NCI_TEST_USER -s
+  - cd ansible && ansible-playbook -i inventories/biocache-test ala-demo.yml --private-key ../nci-key.pem -u $ANSIBLE_NCI_TEST_USER -s
 
 addons:
   ssh_known_hosts:
