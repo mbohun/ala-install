@@ -1,7 +1,7 @@
 # An inventory for the deployment of the ALA demo for the UK.
 
 [ala-demo]
-203.101.226.44
+130.56.244.8
 
 [ala-demo:vars]
 is_vagrant=false
@@ -124,3 +124,5 @@ logger_db_hostname = localhost
 auth_base_url=https://auth.ala.org.au
 auth_cas_url=https://auth.ala.org.au/cas
 userdetails_url=https://auth.ala.org.au/userdetails/userDetails
+
+get_url_timeout=120

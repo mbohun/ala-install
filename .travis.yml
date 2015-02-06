@@ -8,23 +8,20 @@ branches:
   - master
 
 before_install:
-  - openssl aes-256-cbc -K $encrypted_bc4ab20c2dda_key -iv $encrypted_bc4ab20c2dda_iv -in key.pem.enc -out key.pem -d
-  - chmod 600 key.pem
+  - openssl aes-256-cbc -K $encrypted_bc4ab20c2dda_key -iv $encrypted_bc4ab20c2dda_iv -in nci-key.pem.enc -out nci-key.pem -d
+  - chmod 600 nci-key.pem
 
 install:
   - pip install ansible
 
-before_script:
-  - sudo sh -c "echo \"203.101.226.44  biocache-test\" >> /etc/hosts"
-
 script:
-  - cd ansible && ansible-playbook -i inventories/biocache-test ala-demo.yml --private-key ../key.pem -u $ANSIBLE_TEST_USER -s
+  - cd ansible && ansible-playbook -i inventories/biocache-test ala-demo.yml --private-key ../key.pem -u $ANSIBLE_NCI_TEST_USER -s
 
 addons:
   ssh_known_hosts:
-  - 203.101.226.44
-  - biocache-test
+  - 130.56.244.8
 
 env:
   global:
   - secure: "qHZ4n4DAqe+3UkfuQBPMDqthgHjHZf53kWNZU1tO5csmScsoYnoOg3Qq3Y60tBjQ+ENEI04b3flNRo+rGA6swSV4rXv0LhRgCkPyxXhzUmTjgcAc4uF+5dlKfbwUXqy55pIi0nqphlJhnHoHRLDMvxkatuzxoUJk0pLeYcq/Daw="
+  - secure: "sIgtRon6w5MSnUOjQQ9Ce7qdfp/HVrpXuIZEVfcFi9E4bn2XA/8Tw7bZSFL+mazK6x8B+qrpLIRCD+Tlyto1BbbYOYqOJKEA7jNgKalyGwI551Eh0ATk10MhrW9s9i2b1mkstMRdtpQf1zL1MGXlXLSUeQUi8Rs+vZCNs8KUmaU="
