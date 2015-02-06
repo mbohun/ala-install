@@ -18,8 +18,7 @@ before_script:
   - sudo sh -c "echo \"203.101.226.44  biocache-test\" >> /etc/hosts"
 
 script:
-  - cd ansible
-  - ansible-playbook -i inventories/biocache-test ala-demo.yml --private-key ../key.pem -u $ANSIBLE_TEST_USER -s
+  - cd ansible && ansible-playbook -i inventories/biocache-test ala-demo.yml --private-key ../key.pem -u $ANSIBLE_TEST_USER -s
 
 addons:
   ssh_known_hosts:
